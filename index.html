@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Основы WEB-дизайна • Полный курс</title>
+		<style>
+			:root {
+				--primary: #2c3e50;
+				--accent: #e67e22;
+				--light: #ecf0f1;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+				line-height: 1.7;
+				color: #333;
+				background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+			}
+
+			header {
+				background: var(--primary);
+				color: white;
+				padding: 1.5rem 0;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			.container {
+				max-width: 1240px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+			.nav {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.logo {
+				font-size: 2rem;
+				font-weight: bold;
+				color: var(--accent);
+			}
+
+			.hero {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				background:
+					linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+					url('https://picsum.photos/id/1015/1920/1080') center/cover;
+				color: white;
+				text-align: center;
+				margin-top: 75px;
+			}
+
+			h1 {
+				font-size: 3.8rem;
+				margin-bottom: 1rem;
+			}
+			h2 {
+				font-size: 2.6rem;
+				text-align: center;
+				margin: 3rem 0 2.5rem;
+				color: var(--primary);
+			}
+			h3 {
+				font-size: 1.6rem;
+				margin: 2rem 0 1rem;
+				color: var(--primary);
+			}
+
+			.content-section {
+				padding: 100px 0;
+			}
+			.section-bg {
+				background: white;
+			}
+
+			.card {
+				background: white;
+				border-radius: 12px;
+				padding: 2rem;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+				margin-bottom: 2rem;
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+				gap: 2rem;
+			}
+
+			.timeline {
+				position: relative;
+				max-width: 900px;
+				margin: 3rem auto;
+			}
+			.timeline::before {
+				content: '';
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 5px;
+				height: 100%;
+				background: var(--accent);
+			}
+			.timeline-item {
+				margin: 3rem 0;
+				position: relative;
+				display: flex;
+				gap: 2rem;
+			}
+			.timeline-item:nth-child(odd) {
+				flex-direction: row-reverse;
+				text-align: right;
+			}
+			.timeline-content {
+				width: 45%;
+				background: white;
+				padding: 1.8rem;
+				border-radius: 12px;
+				box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+			}
+
+			ul,
+			ol {
+				padding-left: 1.5rem;
+				margin: 1rem 0;
+			}
+			li {
+				margin-bottom: 0.6rem;
+			}
+
+			footer {
+				background: var(--primary);
+				color: white;
+				text-align: center;
+				padding: 4rem 0 2rem;
+			}
+
+			.btn {
+				display: inline-block;
+				background: var(--accent);
+				color: white;
+				padding: 14px 36px;
+				border-radius: 50px;
+				text-decoration: none;
+				font-weight: bold;
+				margin-top: 1.5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="nav">
+					<div class="logo">WEB-ДИЗАЙН</div>
+					<div>Учебное пособие</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="hero">
+			<div class="container">
+				<h1>Основы Web-дизайна</h1>
+				<p style="font-size: 1.5rem; max-width: 800px; margin: 0 auto 2rem">
+					Полный интерактивный курс на основе классического учебного пособия
+				</p>
+				<a href="#basics" class="btn">Перейти к обучению</a>
+			</div>
+		</section>
+
+		<!-- История -->
+		<section id="history" class="content-section section-bg">
+			<div class="container">
+				<h2>История WWW и Internet</h2>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<h3>1969–1984</h3>
+							<p>
+								Создание ARPANET — первой компьютерной сети для обмена
+								информацией между исследовательскими центрами США.
+							</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<h3>1986</h3>
+							<p>
+								Национальный фонд США запускает проект NSFNET для объединения
+								научных учреждений.
+							</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<h3>1992</h3>
+							<p>
+								Тим Бернерс-Ли (CERN, Швейцария) создаёт World Wide Web —
+								интерактивную мультимедийную гипертекстовую среду.
+							</p>
+						</div>
+					</div>
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<h3>1995</h3>
+							<p>
+								В сети уже 10 миллионов компьютеров. Интернет становится
+								глобальным средством связи и важнейшим источником информации.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Что такое веб-дизайн -->
+		<section id="basics" class="content-section">
+			<div class="container">
+				<h2>Что такое Web-дизайн?</h2>
+				<div class="card">
+					<p>
+						<strong>Web-дизайн</strong> — это графический дизайн, перенесённый в
+						интерактивную среду. По своей сути он ближе всего к полиграфии,
+						однако технология создания совершенно иная.
+					</p>
+					<p>
+						Главная цель интерактивного web-дизайна — помочь пользователю быстро
+						и интуитивно сориентироваться на сайте. Дизайн должен быть:
+					</p>
+					<ul>
+						<li>красивым</li>
+						<li>полезным</li>
+						<li>простым</li>
+						<li>приятным в использовании</li>
+					</ul>
+					<p>
+						Web-дизайнер создаёт не просто оформление, а полноценный продукт. В
+						web-проекте роль дизайна — главенствующая.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Важные параметры -->
+		<section class="content-section section-bg">
+			<div class="container">
+				<h2>Важные параметры оценки web-проекта</h2>
+				<div class="grid">
+					<div class="card">
+						<ol>
+							<li>Скорость загрузки</li>
+							<li>Уровень дизайна</li>
+							<li>Цельность стиля</li>
+							<li>Эргономика (удобство использования)</li>
+							<li>Цитируемость</li>
+							<li>Посещаемость</li>
+							<li>Уровень контента</li>
+							<li>Соответствие поставленным целям</li>
+							<li>Уровень технологий</li>
+							<li>Применение инновационных приёмов</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Композиция -->
+		<section class="content-section">
+			<div class="container">
+				<h2>Основы композиции для Web</h2>
+				<div class="grid">
+					<div class="card">
+						<h3>Параметры формы</h3>
+						<ul>
+							<li>
+								<strong>Объём</strong> — относительное равенство всех трёх
+								измерений
+							</li>
+							<li>
+								<strong>Плоскость</strong> — сильное уменьшение размеров по
+								одной координате
+							</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h3>Средства композиционного единства</h3>
+						<ul>
+							<li>Пропорции и масштабность</li>
+							<li>Ритм</li>
+							<li>Контраст и нюанс</li>
+							<li>Цветовая совместимость</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h3>Симметрия / Асимметрия / Диссимметрия</h3>
+						<p>
+							<strong>Симметрия</strong> — строгость, спокойствие,
+							классицизм.<br />
+							<strong>Асимметрия</strong> — динамика, жизнь, выразительность.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Цвет -->
+		<section class="content-section section-bg">
+			<div class="container">
+				<h2>Цвет в веб-дизайне</h2>
+				<div class="grid">
+					<div class="card">
+						<h3>Цветовые характеристики</h3>
+						<ul>
+							<li>Цветовой тон</li>
+							<li>Насыщенность</li>
+							<li>Светлота</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h3>Цветовые ряды</h3>
+						<ul>
+							<li>Чёрно-белый</li>
+							<li>Тёплая гамма (жёлтый, оранжевый, красный)</li>
+							<li>Холодная гамма (зелёный, синий, фиолетовый)</li>
+						</ul>
+					</div>
+					<div class="card">
+						<h3>Оранжевый цвет</h3>
+						<p>
+							Оранжевый цвет гипнотически притягивает взгляд. Идеально подходит
+							для баннеров и акцентов.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Правила хорошего сайта -->
+		<section class="content-section">
+			<div class="container">
+				<h2>Правила хорошего сайта</h2>
+				<div class="grid">
+					<div class="card">
+						<h3>1. Содержание</h3>
+						<p>
+							Пользователи приходят за информацией. Чем больше качественного
+							контента — тем лучше.
+						</p>
+					</div>
+					<div class="card">
+						<h3>2. Оформление</h3>
+						<p>
+							Сайт — это лицо компании. Аккуратность, чистота стиля, правильные
+							пропорции.
+						</p>
+					</div>
+					<div class="card">
+						<h3>3. Навигация</h3>
+						<p>Меню должно быть интуитивно понятным. Не более 5–7 пунктов.</p>
+					</div>
+					<div class="card">
+						<h3>4. Скорость и функциональность</h3>
+						<p>
+							Страница не должна превышать 30 Кб. Flash-заставки и «дорвеи» —
+							плохо.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Этапы работы -->
+		<section class="content-section section-bg">
+			<div class="container">
+				<h2>Этапы работы над проектом</h2>
+				<ol style="max-width: 800px; margin: 2rem auto; font-size: 1.2rem">
+					<li>
+						<strong>Планирование</strong> — структура, навигация, анализ
+						требований
+					</li>
+					<li>
+						<strong>Графическое воплощение</strong> — создание дизайн-макетов
+					</li>
+					<li>
+						<strong>Верстка и программирование</strong> — техническая
+						реализация, тестирование
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<p><strong>© 2026 Основы Web-дизайна</strong></p>
+				<p>
+					Учебный ресурс создан на основе классического пособия по веб-дизайну
+				</p>
+			</div>
+		</footer>
+	</body>
+</html>
